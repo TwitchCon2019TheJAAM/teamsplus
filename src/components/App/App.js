@@ -1,6 +1,7 @@
 import React from 'react'
 import Authentication from '../../util/Authentication/Authentication'
 import AudienceView from '../AudienceView/AudienceView'
+
 import './App.css'
 
 export default class App extends React.Component{
@@ -81,14 +82,14 @@ export default class App extends React.Component{
                         <p>My opaque ID is {this.Authentication.getOpaqueId()}.</p>
                         <div>{this.Authentication.isModerator() ? <p>I am currently a mod, and here's a special mod button <input value='mod button' type='button'/></p>  : 'I am currently not a mod.'}</div>
                         <p>I have {this.Authentication.hasSharedId() ? `shared my ID, and my user_id is ${this.Authentication.getUserId()}` : 'not shared my ID'}.</p>
-                   <AudienceView fakeList={["Streamer A", "Streamer B", "Streamer C"]}></AudienceView>
+                   <AudienceView fakeList={["Streamer A", "Streamer B", "Streamer C"]} userID={"40664650"}></AudienceView>
                     </div>
                 </div>
             )
         }else{
             return (
                 <div className="App">
-                    <StreamerView/>
+                    {/* <StreamerView/> */}
                 </div>
             )
         }
