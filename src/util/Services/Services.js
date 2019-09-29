@@ -2,12 +2,14 @@ import axios from 'axios'
 import Authentication from '../../util/Authentication/Authentication'
 const CID = 'k9oz550zkxdteioqf5noq4ef4y0qq4'
 
-export function getUserName(user_id) {
-    if (user_id == 40664650) {
+export async function getUserName(user_id) {
+    if (user_id == 40664659) {
         return 'MaxGrosshandler'
     }
     else {
-        return "Hello"
+       const data = await axios.get('https://api.twitch.tv/helix/users?id='+user_id, {headers: {'Client-ID': CID}})
+        return data;
+
     }
 }
 
